@@ -26,8 +26,8 @@ export default function Element({item, sq, setModal}) {
    <CardImg onClick = {() => setModal(item)} className = 'imgHolderSQ' width = '40%' bottom  src={item.tumb} alt="Card image cap" />
    </div>
    <div className="statsSQ">
-        <h4>{item.views}</h4>
-        <h4>{item.likes ? item.likes : "Blocked"}</h4>
+        <h4><i class="far fa-eye"></i>{item.views}</h4>
+        <h4><i class="fas fa-heart"></i>{item.likes ? item.likes : "Blocked"}</h4>
     </div>
     <div className="buttonsZoneSQ" >
     <Button onClick = {handleDel}><i class="fas fa-trash"></i></Button>
@@ -47,8 +47,8 @@ export default function Element({item, sq, setModal}) {
    <td>
        <div className="daneFilmu">
            <h3>{item.title}</h3>
-           <h4>{item.views}</h4>
-           <h4>{item.likes ? item.likes : "Blocked"}</h4>
+           <h4><i class="far fa-eye"></i>{item.views}</h4>
+           <h4><i class="fas fa-heart"></i>{item.likes ? item.likes : "Blocked"}</h4>
        </div>
    </td>
    <td>
