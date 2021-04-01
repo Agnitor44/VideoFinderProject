@@ -5,13 +5,13 @@ import Searched from './Searched'
 
 import { Link } from 'react-router-dom';
 
-const YTKEY = "?????????????????"
-const VKEY = '?????????????????'
-const V_CLIENT = '?????????????'
-const V_SECRET = '?????????????????'
+const YTKEY = "AIzaSyAS7LrARbfxnEDZf-SnTKLxWCZzOlx0t-4"
+const VKEY = '48ae1cffa9d15002a075db4d22a175fa'
+const V_CLIENT = 'cef5e7052b63000191615d2ec547b4920e76f93d'
+const V_SECRET = 'YPvfFIL7F8gWq7v/koUxa64IbejdP+EEgrW60mWsNQfEIvVc53UmIOuPfusik+DBPummDSDsyZCreh9R/YGSgYf800bMokQ+GgjPmvYfbTiNyiaHPkz9K7/mdV3bXn53'
 
 export default function Home() {
-
+// get date
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -23,6 +23,8 @@ export default function Home() {
     const [now, setNow] = useState('')
     const [error, setError] = useState(false)
 
+
+// fetch data from vimeo
     const vimeoFetch = () => {
         let link = now
         if(now.length > 13) {
@@ -50,7 +52,7 @@ export default function Home() {
                 tumb: body.pictures.sizes[6].link,
                 title: body.name,
                 views: null,
-                likes: body.name,
+                likes: null,
                 date: today,
                 platform: 'VI'
 
@@ -62,6 +64,7 @@ export default function Home() {
 
        
     }
+// fetch data from youtube
     const ytFetch = () => {
        let my = now
      
@@ -103,7 +106,7 @@ export default function Home() {
        
     }
 
-    
+// Search for video
     const handleSub = (e) => {
         e.preventDefault()
         ytFetch()

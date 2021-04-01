@@ -16,6 +16,8 @@ export const useContextStore = () => {
 }
 
 function App() {
+
+  // State in local storage
   function useStickyState(defaultValue, key) {
     const [value, setValue] = useState(() => {
       const stickyValue = window.localStorage.getItem(key);
@@ -28,8 +30,11 @@ function App() {
     }, [key, value]);
     return [value, setValue];
   }
+
+  // global state list
   const [store, setStore] = useStickyState([], 'store')
 
+  // What I want to give down to component tree
   const value = {
     store: store,
     setStore: setStore,

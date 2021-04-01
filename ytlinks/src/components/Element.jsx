@@ -1,20 +1,24 @@
 import React from 'react'
 import '../styles/list.css'
 import {useContextStore} from '../App'
-import { Card, Button, CardTitle, CardText,CardImg , Table} from 'reactstrap';
+import { Card, Button, CardTitle,  CardImg , Table} from 'reactstrap';
 export default function Element({item, sq, setModal}) {
-    const {store, setStore, } = useContextStore()
+    // Getting global state and function
+    const {store, setStore} = useContextStore()
+
+    // Delete from list
     const handleDel = () => {
         const newArr = [...store].filter(thing => thing.id !== item.id)
         setStore(newArr)
     }
+    // Add video to fav list
     const handleFav = () => {
         const ktore = [...store].findIndex(thing => thing.id === item.id)
-    
         const newArr = [...store]
         newArr[ktore].fav = !newArr[ktore].fav
         setStore(newArr)
     }
+    
     return (
         sq ?
         <Card className = 'card' body outline color="secondary">

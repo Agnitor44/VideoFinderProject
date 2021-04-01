@@ -12,6 +12,7 @@ export default function List() {
     const [fav, setFav] = useState(false)
     const [modal, setModal] = useState(false)
 
+    // Need this for pagination
     const indexOfLastTodo = pag * per;
     const indexOfFirstTodo = indexOfLastTodo - per;
     const currentStore = fav ? store.filter(thing => thing.fav).slice(indexOfFirstTodo, indexOfLastTodo) : store.slice(indexOfFirstTodo, indexOfLastTodo);
